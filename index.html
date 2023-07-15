@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            if (location.protocol !== 'https:') location.protocol = 'https:';
+        </script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="“Pragma”" content="”no-cache”" />
+        <meta http-equiv="“Expires”" content="”-1″" />
+        <meta http-equiv="“CACHE-CONTROL”" content="”NO-CACHE”" />
+        <title>Yotzee!</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="score-sheet-grid">
+            <div id="upper-section">
+                <div class="row header">
+                    <div class="column title">Upper Section</div>
+                    <div class="column how-to-score">How to Score</div>
+                    <div class="column score">Score</div>
+                </div>
+                <div class="row">
+                    <div class="column title">
+                        Aces
+                        <svg viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <rect
+                                x="2"
+                                y="2"
+                                rx="10"
+                                ry="10"
+                                width="396"
+                                height="396"
+                                stroke="gray"
+                                fill="lightgray"
+                                stroke-width="4"
+                            ></rect>
+                            <circle cx="200" cy="200" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                        </svg>
+                        = 1
+                    </div>
+                    <div class="column how-to-score">Count and Add Only Aces</div>
+                    <div class="column score">
+                        <score-select range="1,5" name="upper1" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">
+                        Twos
+                        <svg viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <rect
+                                x="2"
+                                y="2"
+                                rx="10"
+                                ry="10"
+                                width="396"
+                                height="396"
+                                stroke="gray"
+                                fill="lightgray"
+                                stroke-width="4"
+                            ></rect>
+                            <circle cx="100" cy="100" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="300" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                        </svg>
+                        = 2
+                    </div>
+                    <div class="column how-to-score">Count and Add Only Twos</div>
+                    <div class="column score">
+                        <score-select range="2,10,2" name="upper2" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">
+                        Threes
+                        <svg viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <rect
+                                x="2"
+                                y="2"
+                                rx="10"
+                                ry="10"
+                                width="396"
+                                height="396"
+                                stroke="gray"
+                                fill="lightgray"
+                                stroke-width="4"
+                            ></rect>
+                            <circle cx="100" cy="100" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="300" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="200" cy="200" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                        </svg>
+                        = 3
+                    </div>
+                    <div class="column how-to-score">Count and Add Only Threes</div>
+                    <div class="column score">
+                        <score-select range="3,15,3" name="upper3" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">
+                        Fours
+                        <svg viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <rect
+                                x="2"
+                                y="2"
+                                rx="10"
+                                ry="10"
+                                width="396"
+                                height="396"
+                                stroke="gray"
+                                fill="lightgray"
+                                stroke-width="4"
+                            ></rect>
+                            <circle cx="100" cy="100" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="100" cy="300" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="100" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="300" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                        </svg>
+                        = 4
+                    </div>
+                    <div class="column how-to-score">Count and Add Only Fours</div>
+                    <div class="column score">
+                        <score-select range="4,20,4" name="upper4" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">
+                        Fives
+                        <svg viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <rect
+                                x="2"
+                                y="2"
+                                rx="10"
+                                ry="10"
+                                width="396"
+                                height="396"
+                                stroke="gray"
+                                fill="lightgray"
+                                stroke-width="4"
+                            ></rect>
+                            <circle cx="100" cy="100" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="100" cy="300" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="100" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="300" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="200" cy="200" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                        </svg>
+                        = 5
+                    </div>
+                    <div class="column how-to-score">Count and Add Only Fives</div>
+                    <div class="column score">
+                        <score-select range="5,25,5" name="upper5" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">
+                        Sixes
+                        <svg viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <rect
+                                x="2"
+                                y="2"
+                                rx="10"
+                                ry="10"
+                                width="396"
+                                height="396"
+                                stroke="gray"
+                                fill="lightgray"
+                                stroke-width="4"
+                            ></rect>
+                            <circle cx="100" cy="100" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="100" cy="200" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="100" cy="300" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="100" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="200" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                            <circle cx="300" cy="300" r="40" stroke="black" fill="black" stroke-width="4"></circle>
+                        </svg>
+                        = 6
+                    </div>
+                    <div class="column how-to-score">Count and Add Only Sixes</div>
+                    <div class="column score">
+                        <score-select range="6,36,6" name="upper6" />
+                    </div>
+                </div>
+                <div class="row sub-total">
+                    <div class="column title">Subtotal</div>
+                    <div class="column how-to-score">
+                        <svg
+                            class="arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
+                        </svg>
+                    </div>
+                    <div class="column score" id="upper-section-subtotal"></div>
+                </div>
+                <div class="row bonus">
+                    <div class="column title">Bonus</div>
+                    <div class="column how-to-score">Score 35</div>
+                    <div class="column score" id="upper-section-bonus"></div>
+                </div>
+                <div class="row total">
+                    <div class="column title">Total</div>
+                    <div class="column how-to-score">
+                        <svg
+                            class="arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
+                        </svg>
+                    </div>
+                    <div class="column score upper-section-total"></div>
+                </div>
+            </div>
+            <div id="lower-section">
+                <div class="row header">
+                    <div class="column title">Lower Section</div>
+                    <div class="column how-to-score">How to Score</div>
+                    <div class="column score">Score</div>
+                </div>
+                <div class="row">
+                    <div class="column title">3 of a kind</div>
+                    <div class="column how-to-score">Add Total Of All Dice</div>
+                    <div class="column score">
+                        <score-select range="3,30,1" name="lower1" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">4 of a kind</div>
+                    <div class="column how-to-score">Add Total Of All Dice</div>
+                    <div class="column score">
+                        <score-select range="4,30,1" name="lower2" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">Full House</div>
+                    <div class="column how-to-score">SCORE 25</div>
+                    <div class="column score">
+                        <score-select options="25" name="lower3" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">Small Straight</div>
+                    <div class="column how-to-score">SCORE 30</div>
+                    <div class="column score">
+                        <score-select options="30" name="lower4" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">Large Straight</div>
+                    <div class="column how-to-score">SCORE 40</div>
+                    <div class="column score">
+                        <score-select options="40" name="lower5" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">Yahtzee</div>
+                    <div class="column how-to-score">SCORE 50</div>
+                    <div class="column score">
+                        <score-select options="50" name="lower6" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">Chance</div>
+                    <div class="column how-to-score">Score Total Of All 5 Dice</div>
+                    <div class="column score">
+                        <score-select range="1,30,1" name="lower7" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">Yahtzee Bonus</div>
+                    <div class="column how-to-score">100 For Each Bonus</div>
+                    <div class="column score">
+                        <score-select range="100,1000,100" name="lower8" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">Total Of Lower Section</div>
+                    <div class="column how-to-score">
+                        <svg
+                            class="arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
+                        </svg>
+                    </div>
+                    <div class="column score" id="lower-section-total"></div>
+                </div>
+                <div class="row">
+                    <div class="column title">Total of Upper Section</div>
+                    <div class="column how-to-score">
+                        <svg
+                            class="arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
+                        </svg>
+                    </div>
+                    <div class="column score upper-section-total"></div>
+                </div>
+                <div class="row grand-total">
+                    <div class="column title">Grand Total</div>
+                    <div class="column how-to-score">
+                        <svg
+                            class="arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
+                        </svg>
+                    </div>
+                    <div class="column score" id="grand-total"></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal">
+            <div class="backdrop"></div>
+            <div class="content"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

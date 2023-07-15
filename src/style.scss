@@ -1,0 +1,127 @@
+body {
+    background: #eee;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+        sans-serif;
+    font-size: 18px;
+}
+svg {
+    height: 1rem;
+    width: 1rem;
+    vertical-align: text-bottom;
+    &.arrow {
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+}
+
+score-select {
+    position: relative;
+    display: block;
+    width: 3.6rem;
+    min-height: 100%;
+    padding: 3px;
+    margin: -3px;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.05);
+    &.has-value {
+        background-color: transparent;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    .backdrop {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-height: 90%;
+        max-width: 100%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        width: 250px;
+        border-radius: 0.5rem;
+        overflow: auto;
+        box-sizing: border-box;
+        z-index: 10;
+    }
+}
+
+.select {
+    .option {
+        border-bottom: solid 1px #ccc;
+        padding: 1rem 1.5rem;
+        text-align: center;
+        min-height: 1rem;
+    }
+}
+
+.score-sheet-grid {
+    max-width: 600px;
+    margin: 0 auto;
+    .row {
+        &.header {
+            border-bottom: solid 1px #aaa;
+            font-weight: bold;
+        }
+        display: flex;
+        flex-direction: row;
+        &.sub-total {
+            border-top: solid 1px #aaa;
+        }
+        &.grand-total {
+            background: #ddd;
+        }
+
+        .column {
+            border-bottom: solid 1px #ccc;
+            padding: 8px;
+            flex: 5;
+            text-align: left;
+            select {
+                font-size: 1rem;
+                min-width: 4rem;
+                border: none;
+                background: none;
+                outline: none;
+                text-align: right;
+            }
+            &.title {
+                font-size: 105%;
+                svg {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    vertical-align: middle;
+                }
+            }
+            &.how-to-score {
+                text-align: center;
+                font-size: 80%;
+                // @media screen and (max-width: 550px) {
+                //     display: none;
+                // }
+            }
+            &.score {
+                text-align: right;
+                flex: 2;
+            }
+        }
+    }
+}
